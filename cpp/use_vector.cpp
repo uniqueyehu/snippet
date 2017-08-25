@@ -33,6 +33,10 @@ int main(int argc, char *argv[])
     {
         text.push_back(word);
     }
+    // 从vector中删除一个元素，size -1
+    text.pop_back();
+    // 清空vector，size为0
+    text.clear();
 
     // 若text为空，返回真；否则返回假
     text.empty();
