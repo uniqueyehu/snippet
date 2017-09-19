@@ -9,3 +9,5 @@ The usage of C++. Now there are :
 The notes of each chapter in `C++ Primer`
 
 11. [chapter11](https://github.com/uniqueyehu/snippet/blob/master/cpp/chapter11.cpp)
+
+11. [chapter12](https://github.com/uniqueyehu/snippet/blob/master/cpp/chapter12.cpp)
