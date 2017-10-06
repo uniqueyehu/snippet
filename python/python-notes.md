@@ -57,7 +57,7 @@ t = (1,)
 
 ## 7、条件判断和循环
 ### (1)代码片，用冒号表示
-if condition<font color=red>:</font>
+if condition:
 
 &nbsp;&nbsp;&nbsp;&nbsp;xxx
 
@@ -196,6 +196,7 @@ print xxx
 
 ### (3)匿名函数
 Python对匿名函数支持有限，只有一些简单的情况下可以使用匿名函数
+
 def f(x):
 return x * x
 相当于
