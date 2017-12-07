@@ -6,7 +6,8 @@
  **
  ** Author      : Ye Hu
  ** Version     : v1.0
- ** Description :
+ ** Description : 拷贝构造函数、拷贝赋值运算、析构函数（三/五法则中的三）
+ **
  **
 ****************************************************************************/
 
@@ -15,8 +16,8 @@
 
 using namespace std;
 
-
 /**********************************************************/
+/* HasPtr类 */
 class HasPtr {
 public:
     HasPtr(const string &s = string()) :
@@ -41,11 +42,13 @@ public:
     }
 
     // 析构函数
+    // 先执行函数体，再自动销毁变量
     ~HasPtr()
     {
         delete ps;
     }
 
+    // 为了方便验证才去掉private
 //private:
     string *ps;
     int i;
@@ -57,7 +60,27 @@ HasPtr f(HasPtr hp)
     ret.i = 5;
     return ret;
 }
+
 /**********************************************************/
+/* NoCopy类 */
+// c++ 11新标准
+struct NoCopy {
+    NoCopy() = default;
+    NoCopy(const NoCopy&) = delete;             // 阻止拷贝
+    NoCopy &operator=(const NoCopy&) = delete;  // 阻止赋值
+    ~NoCopy() = default;
+};
+
+/**********************************************************/
+/* PrivateCopy类 */
+// 拷贝控制成员是private的，普通用户代码无法访问，达到阻止拷贝效果
+class PrivateCopy {
+    PrivateCopy(const PrivateCopy&);
+    PrivateCopy &operator=(const PrivateCopy&);
+public:
+    PrivateCopy() = default;
+    ~PrivateCopy();
+};
 
 int main(int argc, char *argv[])
 {
