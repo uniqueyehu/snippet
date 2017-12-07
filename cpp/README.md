@@ -1,19 +1,74 @@
-# C++
-## Cpp
-The usage of C++. Now there are :
-1. [vector](https://github.com/uniqueyehu/snippet/blob/master/cpp/use_vector.cpp)
+# Some code write by C++
+## pick250
 
-2. [lambda](https://github.com/uniqueyehu/snippet/blob/master/cpp/use_lambda.cpp)
+# C++ Primer notes
+The notes of some chapters in `C++ Primer`
 
-## C++ primer notes
-The notes of each chapter in `C++ Primer`
+## 1. chapter1
 
-11. [chapter11](https://github.com/uniqueyehu/snippet/blob/master/cpp/chapter11.cpp)
+## 7. chapter7
+类的定义：类的成员函数、非成员函数、构造函数、析构函数、访问控制、友元、类的静态成员。
 
-11. [chapter12](https://github.com/uniqueyehu/snippet/blob/master/cpp/chapter12.cpp)
+其他：类类型、委托构造函数、聚合类
 
-# Python
-## Notes
-1. [notes](https://github.com/uniqueyehu/snippet/blob/master/python/python-notes.md)
+## 8. chapter8
+IO类：istream、ostream、iostream（头文件iostream）
 
-2. [Python-Build-in-Functions](https://docs.python.org/2/library/functions.html)
+文件输入输出类：ifstream、ofstream、fstream（头文件fstream）
+
+string流：istringstream、ostringstream、stringstream（头文件sstream）
+
+## 9. chapter9
+容器库：迭代器、容器类型成员、begin和end成员、容器操作
+
+顺序容器：vector、deque、list、forward_list、array、string
+
+容器适配器：
+
+## 10. chapter10
+泛型算法：
+
+定制操作：lambda表达式
+
+## 11. chapter11
+关联容器：map、set
+
+关联容器操作：定义、迭代器、添加元素、删除元素、访问元素
+
+无序容器：
+
+## 12. chapter12
+动态内存：
+
+智能指针：
+
+动态数组：
+
+## 13. chapter13
+拷贝构造函数、拷贝赋值运算符、析构函数（三）
+
+三/五法则
+
+移动构造函数、移动赋值运算符（五）
+
+## 14. chapter14
+输入输出运算符重载：
+
+算术和关系运算符重载：
+
+赋值运算符：
+
+下标运算符：
+
+递增和递减运算符：
+
+成员访问运算符：
+
+函数调用运算符：
+
+## 15. chapter15
+基类和派生类：
+
+虚函数：
+
+抽象基类：
