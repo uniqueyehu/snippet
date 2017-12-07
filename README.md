@@ -1,16 +1,9 @@
 # C++
 ## Cpp
-The usage of C++. Now there are :
-1. [vector](https://github.com/uniqueyehu/snippet/blob/master/cpp/use_vector.cpp)
+Some C++ code
 
-2. [lambda](https://github.com/uniqueyehu/snippet/blob/master/cpp/use_lambda.cpp)
-
-## C++ primer notes
-The notes of each chapter in `C++ Primer`
-
-11. [chapter11](https://github.com/uniqueyehu/snippet/blob/master/cpp/chapter11.cpp)
-
-11. [chapter12](https://github.com/uniqueyehu/snippet/blob/master/cpp/chapter12.cpp)
+### C++ primer notes
+The notes of some chapter in `C++ Primer`
 
 # Python
 ## Notes
