@@ -1,4 +1,4 @@
-﻿#ifndef CHAPTER13_3_H
+#ifndef CHAPTER13_3_H
 #define CHAPTER13_3_H
 
 #include <iostream>
