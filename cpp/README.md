@@ -52,6 +52,10 @@ string流：istringstream、ostringstream、stringstream（头文件sstream）
 
 三/五法则
 
+交换操作：一般类值的类可用交换操作进行优化
+
+右值引用
+
 移动构造函数、移动赋值运算符（五）
 
 ## 14. chapter14
