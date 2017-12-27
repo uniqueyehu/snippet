@@ -77,6 +77,8 @@ string流：istringstream、ostringstream、stringstream（头文件sstream）
 
 函数调用运算符：函数调用运算符（()）必须是成员函数
 
+类型转换运算符：必须是成员函数
+
 ## 15. chapter15
 基类和派生类：
 
