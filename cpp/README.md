@@ -22,11 +22,17 @@ IO类：istream、ostream、iostream（头文件iostream）
 string流：istringstream、ostringstream、stringstream（头文件sstream）
 
 ## 9. chapter9
-容器库：迭代器、容器类型成员、begin和end成员、容器操作
+容器库：迭代器、容器类型成员、begin和end成员、
+
+容器操作：
+
+container.insert(p, t);在p指向的元素之前创建一个值为t的元素，返回指向新添加的元素的迭代器。
+
+container.erase(p);删除p所指向的元素，返回一个指向被删元素之后元素的迭代器。
 
 顺序容器：vector、deque、list、forward_list、array、string
 
-容器适配器：
+容器适配器：stack、queue、priority_queue。基于某个容器实现，使其行为像另一个容器。本质上，一个适配器是一种机制，能使某种行为看起来像另一种事物一样。
 
 ## 10. chapter10
 泛型算法：
