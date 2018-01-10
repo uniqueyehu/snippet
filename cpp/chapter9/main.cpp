@@ -1,20 +1,36 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include <deque>
 #include <list>
+// 閫傞厤鍣╝daptor
 #include <stack>
 #include <queue>
 
+
+#include "myvector.h"
+
 using namespace std;
 
-// 文中代码
+// 鏂囦腑浠ｇ爜
+void test_string()
+{
+    int i = 42;
+    string s = to_string(i);    // 灏嗘暣鏁拌浆鎹负瀛楃褰㈠紡
+    double d = stod(s);         // 灏嗗瓧绗︿覆s杞崲涓烘诞鐐规暟
+    cout << s << " " << d << endl;
+
+    string s2 = "pi = 3.14";
+    d = stod(s2.substr(s2.find_first_of("+-.0123456789")));
+    cout << "d = " << d << endl;
+}
+
 void test_stack()
 {
     stack<int> intStack;
     for (size_t ix = 0; ix != 10; ++ix)
         intStack.push(ix);
-    while (!intStack.empty())
-    {
+    while (!intStack.empty()) {
         int value = intStack.top();
         cout << value << " ";
         intStack.pop();
@@ -36,9 +52,8 @@ void test_queue()
     cout << "back is : " << value << endl;
 }
 
-
 //------------------------------------------------------------------------------------------
-// 课后练习
+// 璇惧悗缁冧範
 
 vector<int> iv = {1, 3, 5, 7, 2, 9, 13, 6};
 
@@ -119,12 +134,14 @@ int main(int argc, char *argv[])
 //    int r2 = test_9_4(iv.begin(), iv.end(), 4);
 //    cout << "find 4 result is " << r2 << endl;
 
-    // 返回相应的迭代器，未找到时返回end
+    // 杩斿洖鐩稿簲鐨勮凯浠ｅ櫒锛屾湭鎵惧埌鏃惰繑鍥瀍nd
 //    cout << test_9_5(iv.begin(), iv.end(), 2) - iv.begin() << endl;
 //    cout << test_9_5(iv.begin(), iv.end(), 4) - iv.begin() << endl;
 
 //    test_9_20();
 //    test_stack();
     test_queue();
+//    test_string();
+//    test();
     return 0;
 }
