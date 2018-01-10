@@ -59,20 +59,18 @@ vector<int> iv = {1, 3, 5, 7, 2, 9, 13, 6};
 
 bool test_9_4(vector<int>::iterator b, vector<int>::iterator e, int t)
 {
-    for(; b != e; ++b)
-    {
+    for (; b != e; ++b) {
         if(*b == t)
-        return true;
+            return true;
     }
     return false;
 }
 
 vector<int>::iterator test_9_5(vector<int>::iterator b, vector<int>::iterator e, int t)
 {
-    for(; b != e; ++b)
-    {
+    for (; b != e; ++b) {
         if(*b == t)
-        return b;
+            return b;
     }
     return e;
 }
@@ -82,11 +80,11 @@ void test_9_18()
     deque<string> destr;
     string str;
 
-    while(cin >> str)
+    while (cin >> str)
         destr.push_front(str);
 //        destr.push_back(str);
 
-    for(auto iter = destr.begin(); iter != destr.end(); ++iter)
+    for (auto iter = destr.begin(); iter != destr.end(); ++iter)
         cout << *iter << endl;
 }
 
@@ -95,10 +93,10 @@ void test_9_19()
     list<string> sl;
     string str;
 
-    while(cin >> str)
+    while (cin >> str)
         sl.push_back(str);
 
-    for(auto iter = sl.cbegin(); iter != sl.cend(); ++iter)
+    for (auto iter = sl.cbegin(); iter != sl.cend(); ++iter)
         cout << *iter << endl;
 }
 
