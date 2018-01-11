@@ -1,12 +1,16 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <algorithm>    // æ³›å‹ç®—æ³•
+#include <numeric>      // æŸäº›ç®—æ³•å®šä¹‰åœ¨æ­¤å¤´æ–‡ä»¶ä¸­
 #include <string>
 #include <list>
+#include <iterator>     // è¿­ä»£å™¨å¤´æ–‡ä»¶
+
+#include "mylambda.h"
 
 using namespace std;
 //-----------------------------------------------------------------
-// ÎÄÖĞ´úÂë
+// æ–‡ä¸­ä»£ç 
 void test_find()
 {
     vector<int> iv;
@@ -14,7 +18,7 @@ void test_find()
         iv.push_back(i);
 
     int val = 4;
-    // ²éÕÒvalÔªËØÊÇ·ñ´æÔÚ
+    // æŸ¥æ‰¾valå…ƒç´ æ˜¯å¦å­˜åœ¨
     auto result = find(iv.cbegin(), iv.cend(), val);
     cout << "The value " << val
          << (result == iv.cend()
@@ -29,7 +33,7 @@ void test_count()
     iv.push_back(5);
 
     int val = 5;
-    // Í³¼Æval³öÏÖµÄ´ÎÊı
+    // ç»Ÿè®¡valå‡ºç°çš„æ¬¡æ•°
     cout << "The times is : " << count(iv.cbegin(), iv.cend(), val) << endl;
 }
 
@@ -39,16 +43,32 @@ void test_accumulate()
     for (size_t i = 1; i != 10; ++i)
         vec.push_back(i);
 
-    int sum = accumulate(vec.cbegin(), vec.cend(), 0); // ÇóºÍ
+    int sum = accumulate(vec.cbegin(), vec.cend(), 0); // æ±‚å’Œ
     cout << "sum is : " << sum << endl;
 
     vector<string> str = {"I ", "am ", "an ", "iron ", "man"};
-    string sumstr = accumulate(str.cbegin(), str.cend(), string("")); // Á¬½Ó×Ö·û´®
+    string sumstr = accumulate(str.cbegin(), str.cend(), string("")); // è¿æ¥å­—ç¬¦ä¸²
     cout << sumstr << endl;
 }
 
+// iostreamè¿­ä»£å™¨
+void test_iostream_iterator()
+{
+    vector<int> vec;
+//    istream_iterator<int> in_iter(cin);      // ä»cinè¯»å–int
+//    istream_iterator<int> eof;               // istreamå°¾åè¿­ä»£å™¨
+//    while (in_iter != eof)
+//        vec.push_back(*in_iter++);
+
+//    for (auto i = vec.begin(); i != vec.end(); ++i)
+//        cout << *i << endl;
+
+    istream_iterator<int> in2(cin), eof2;
+    cout << accumulate(in2, eof2, 0) << endl;
+}
+
 //-----------------------------------------------------------------
-// ¿ÎºóÁ·Ï°
+// è¯¾åç»ƒä¹ 
 void test_10_2()
 {
     list<string> sl;
@@ -58,7 +78,7 @@ void test_10_2()
 
     string val = "hello";
     cout << "Hello is : "
-         << count(sl.cbegin(), sl.cend(), val) // Í³¼Æval³öÏÖµÄ´ÎÊı
+         << count(sl.cbegin(), sl.cend(), val) // ç»Ÿè®¡valå‡ºç°çš„æ¬¡æ•°
          << " times" << endl;
 }
 
@@ -69,7 +89,7 @@ void output_10_9(vector<string> &str)
     cout << endl;
 }
 
-// ±È½Ïµ¥´Ê³¤¶È
+// æ¯”è¾ƒå•è¯é•¿åº¦
 bool isShorter(const string &s1, const string &s2)
 {
     return s1.size() < s2.size();
@@ -80,19 +100,19 @@ void test_10_9()
     vector<string> str = {"the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle"};
     output_10_9(str);
 
-    // °´×ÖµäĞòÅÅĞò
+    // æŒ‰å­—å…¸åºæ’åº
     sort(str.begin(), str.end());
     output_10_9(str);
 
-    // ½«ÖØ¸´µÄÔªËØ·ÅÔÚÄ©Î²
+    // å°†é‡å¤çš„å…ƒç´ æ”¾åœ¨æœ«å°¾
     auto end_unique = unique(str.begin(), str.end());
     output_10_9(str);
 
-    // É¾³ıÎ²²¿µÄÖØ¸´ÔªËØ
+    // åˆ é™¤å°¾éƒ¨çš„é‡å¤å…ƒç´ 
     str.erase(end_unique, str.end());
     output_10_9(str);
 
-    // ÎÈ¶¨ÅÅĞòËã·¨£¬Î¬³Ö³¤¶ÈÏàµÈÔªËØµÄÔ­ÓĞĞòÁĞ
+    // ç¨³å®šæ’åºç®—æ³•ï¼Œç»´æŒé•¿åº¦ç›¸ç­‰å…ƒç´ çš„åŸæœ‰åºåˆ—
     stable_sort(str.begin(), str.end(), isShorter);
     output_10_9(str);
 }
@@ -103,6 +123,8 @@ int main(int argc, char *argv[])
 //    test_count();
 //    test_10_2();
 //    test_accumulate();
-    test_10_9();
+//    test_10_9();
+//    test_lambda();
+    test_iostream_iterator();
     return 0;
 }

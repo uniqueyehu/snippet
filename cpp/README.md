@@ -37,10 +37,24 @@ container.erase(p);删除p所指向的元素，返回一个指向被删元素之
 ## 10. chapter10
 泛型算法：
 
-定制操作：lambda表达式
+只读：find、accumulate、equal、count
+
+写容器：fill、fill_n、copy、replace、replace_copy
+
+重排容器元素：sort、unique
+
+定制操作：lambda表达式、参数绑定bind
+
+插入迭代器（迭代器适配器）：back_inserter(vec)，返回一个与该容器绑定的插入迭代器，当我们通过此迭代器赋值时，赋值运算会调用push_back将一个具有给定值的元素添加到容器中。front_inserter、inserter
+
+iostream迭代器
+
+反向迭代器
 
 ## 11. chapter11
 关联容器：map、set
+
+以及它们的变种：multimap、multiset（多关键字）；unordered_map、unorder_set（无序，用哈希函数组织）；unordered_multimap、unorder_multiset（无序，用哈希函数组织，关键字可重复）
 
 关联容器操作：定义、迭代器、添加元素、删除元素、访问元素
 
