@@ -3,6 +3,7 @@
 #include <set>
 #include <vector>
 #include <utility>
+#include <unordered_map>
 
 #include "word_transform.h"
 
@@ -23,6 +24,15 @@ void test_map()
     for (const auto &w : word_count)
         cout << w.first << " occurs " << w.second
              << ((w.second > 1) ? " times" : " time") << endl;
+
+    cin.clear(); // 这里cin需要复位才能进行下一次的使用，否则就直接判断无效然后退出咯
+    unordered_map<string, size_t> word_count_unorder;
+    string word2;
+    while (cin >> word2)
+        ++word_count_unorder[word2];
+    for (const auto &w2 : word_count_unorder)
+        cout << w2.first << " occurs " << w2.second
+             << ((w2.second > 1) ? " times" : " time") << endl;
 }
 
 void test_set()
@@ -229,6 +239,11 @@ void test_find()
 // 使用一个哈希函数将元素映射到桶
 // 容器将具有一个特定哈希值的所有元素都保存在相同的桶中
 // 当一个桶保存多个元素时，需要顺序搜索这些元素来查找我们想要的那个
+void test_unordered_map()
+{
+    test_map();
+}
+
 
 //-----------------------------------------------------------------
 // 课后练习
@@ -252,6 +267,8 @@ int main(int argc, char *argv[])
 
 //    test_find();
 
-    run_transform();
+//    run_transform();
+
+    test_unordered_map();
     return 0;
 }
