@@ -69,7 +69,6 @@ iostream迭代器
 ```
 int *p = new int[42];
 delete [] p;
-
 ```
 
 ## 13. chapter13
