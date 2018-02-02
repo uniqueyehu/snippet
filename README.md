@@ -1,8 +1,10 @@
+# C
+Linux C code
+
 # C++
-## Cpp
 Some C++ code
 
-### C++ primer notes
+## cpp_primer
 The notes of some chapter in `C++ Primer`
 
 # Python
