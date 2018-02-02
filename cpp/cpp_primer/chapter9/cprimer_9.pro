@@ -6,4 +6,4 @@ CONFIG -= qt
 SOURCES += main.cpp
 
 HEADERS += \
-    picktools.h
+    myvector.h

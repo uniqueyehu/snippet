@@ -6,4 +6,7 @@ CONFIG -= qt
 SOURCES += main.cpp
 
 HEADERS += \
-    picktools.h
+    chapter13_1.h \
+    chapter13_2.h \
+    chapter13_3.h \
+    chapter13_4.h
