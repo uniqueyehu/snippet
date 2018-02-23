@@ -12,5 +12,11 @@ Python Crash Course学习
 ### alien_invasion
 用python写的小游戏：外星人入侵
 
+在OS X中安装Pygame
+```
+brew install hg sdl sdl_image sdl_ttf
+pip3 install --user hg+http://bitbucket.org/pygame/pygame
+```
+
 ## others
 1. [Python-Build-in-Functions](https://docs.python.org/2/library/functions.html)
