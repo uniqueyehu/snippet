@@ -8,4 +8,6 @@ SOURCES += main.cpp
 HEADERS += \
     bubble.h \
     select.h \
-    insert.h
+    insert.h \
+    shell.h \
+    merge.h
