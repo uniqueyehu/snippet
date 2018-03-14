@@ -10,4 +10,7 @@ HEADERS += \
     select.h \
     insert.h \
     shell.h \
-    merge.h
+    merge.h \
+    quick.h \
+    heap.h \
+    radix.h

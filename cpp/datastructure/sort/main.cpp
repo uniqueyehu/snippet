@@ -7,6 +7,9 @@
 #include "insert.h"
 #include "shell.h"
 #include "merge.h"
+#include "quick.h"
+#include "heap.h"
+#include "radix.h"
 
 using namespace std;
 
@@ -39,8 +42,17 @@ int main(int argc, char *argv[])
 //    cout << "Shell Sort :" << endl;
 //    shell_sort(array, len);
 
-    cout << "Merge Sort :" << endl;
-    merge_sort(array, temp, 0, len-1);
+//    cout << "Merge Sort :" << endl;
+//    merge_sort(array, temp, 0, len-1);
+
+//    cout << "Quick Sort :" << endl;
+//    quick_sort(array, 0, len - 1);
+
+//    cout << "Heap Sort :" << endl;
+//    heap_sort(len, array);
+
+    cout << "Radix Sort :" << endl;
+    radix_sort(array, len);
 
     print_array(array, len);
 
