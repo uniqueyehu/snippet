@@ -1,0 +1,7 @@
+# qt
+*.user
+*.o
+*.exe
+*.Debug
+*.Release
+*.stash
