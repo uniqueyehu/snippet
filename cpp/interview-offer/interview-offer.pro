@@ -6,4 +6,5 @@ CONFIG -= qt
 SOURCES += main.cpp
 
 HEADERS += \
-    tree.h
+    tree.h \
+    q1.h
