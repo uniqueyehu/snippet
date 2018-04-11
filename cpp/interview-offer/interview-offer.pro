@@ -7,4 +7,6 @@ SOURCES += main.cpp
 
 HEADERS += \
     tree.h \
-    q1.h
+    q1.h \
+    q3.h \
+    q4.h
