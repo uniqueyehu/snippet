@@ -1,21 +1,10 @@
-#include <iostream>
-#include <cstdio>
-
-#include <vector>
-#include <string>
-
-#include <stack>
-#include <queue>
-
-#include <map>
-#include <unordered_map>
-
-using namespace std;
-
-void knap(void);
+#include "snippet.h"
+#include "matrix_jump.h"
+#include "knap.h"
 
 int main(int argc, char *argv[])
 {
     knap();
+//    matrix_jump::test();
     return 0;
 }

@@ -3,7 +3,9 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    knap.cpp
+SOURCES += main.cpp
 
-HEADERS +=
+HEADERS += \
+    matrix_jump.h \
+    knap.h \
+    snippet.h
