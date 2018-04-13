@@ -1,6 +1,6 @@
-#include <iostream>
+#include "snippet.h"
 
-using namespace std;
+//#include "test_virtual.h"
 
 /*
  * q1-q70为剑指offer题目代码
@@ -10,6 +10,6 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    cout << "Hello World!" << endl;
+//    test_virtual();
     return 0;
 }
