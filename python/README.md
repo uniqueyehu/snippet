@@ -18,5 +18,8 @@ brew install hg sdl sdl_image sdl_ttf
 pip3 install --user hg+http://bitbucket.org/pygame/pygame
 ```
 
+## 一个小脚本rwsum.py
+统计log的读写比例、数目以及io量
+
 ## others
 1. [Python-Build-in-Functions](https://docs.python.org/2/library/functions.html)
