@@ -4,7 +4,8 @@
 # 这个函数主要是从result文件统计io的分布情况，即在blktrace层统计
 def blkresult2count(filename, outfilename):
 	# 各个区间的请求数目
-	dic = {'[0-4k)':0, '[4k-8k)':0, '[8k-16k)':0, '[16k-32k)':0, '[32k-128k)':0, '[128k-1m)':0, '[1m-2m)':0}
+	dic = {'[0-4k)':0, '[4k-8k)':0, '[8k-16k)':0, '[16k-32k)':0, \
+			'[32k-128k)':0, '[128k-1m)':0, '[1m-2m)':0}
 	# 请求总大小，单位为512B
 	count = 0
 	# 读写请总大小，单位为512B
@@ -55,8 +56,10 @@ def blkresult2count(filename, outfilename):
 		file_obj.write('[128k-1m)' + ' ' + str(dic['[128k-1m)']) + '\n')
 		file_obj.write('[1m-2m)' + ' ' + str(dic['[1m-2m)']) + '\n')
 		file_obj.write('total size : ' + ' ' + str(count) + '\n')
-		file_obj.write('read size : ' + str(rw_dic['read']) + ' times : ' + str(rw_count[0]) + '\n')
-		file_obj.write('write size : ' + str(rw_dic['write']) + ' times : ' + str(rw_count[1]) + '\n')
+		file_obj.write('read size : ' + str(rw_dic['read']) + ' times : ' \
+						+ str(rw_count[0]) + '\n')
+		file_obj.write('write size : ' + str(rw_dic['write']) + ' times : ' \
+						+ str(rw_count[1]) + '\n')
 
 
 # syslog to count
@@ -64,7 +67,9 @@ def blkresult2count(filename, outfilename):
 def syslog2count(filename, outfilename):
 	# [rnums, rsize, wnums, wsize]
 	# 依次为读次数、读大小、写次数、写大小
-	dic = {'META-CP':[0, 0, 0, 0], 'META-SIT':[0, 0, 0, 0], 'META-NAT':[0, 0, 0, 0], 'META-SSA':[0, 0, 0, 0], 'DATA':[0, 0, 0, 0], 'NODE':[0, 0, 0, 0], 'META-FLUSH':[0, 0, 0, 0], 'OTHER':[0, 0, 0, 0]}
+	dic = {'META-CP':[0, 0, 0, 0], 'META-SIT':[0, 0, 0, 0], 'META-NAT':[0, 0, 0, 0], \
+			'META-SSA':[0, 0, 0, 0], 'DATA':[0, 0, 0, 0], 'NODE':[0, 0, 0, 0], \
+			'META-FLUSH':[0, 0, 0, 0], 'OTHER':[0, 0, 0, 0]}
 	# io总量，单位为512B
 	count = 0
 
@@ -161,19 +166,33 @@ def syslog2count(filename, outfilename):
 
 	# 将统计结果追加写入count文件
 	with open(outfilename, 'a') as file_obj:
-		file_obj.write('\nMETA-CP' + ' ' + str(dic['META-CP'][0]) + ' ' + str(dic['META-CP'][1]) + ' ' + str(dic['META-CP'][2]) + ' ' + str(dic['META-CP'][3]) + '\n')
-		file_obj.write('META-SIT' + ' ' + str(dic['META-SIT'][0]) + ' ' + str(dic['META-SIT'][1]) + ' ' + str(dic['META-SIT'][2]) + ' ' + str(dic['META-SIT'][3]) + '\n')
-		file_obj.write('META-NAT' + ' ' + str(dic['META-NAT'][0]) + ' ' + str(dic['META-NAT'][1]) + ' ' + str(dic['META-NAT'][2]) + ' ' + str(dic['META-NAT'][3]) + '\n')
-		file_obj.write('META-SSA' + ' ' + str(dic['META-SSA'][0]) + ' ' + str(dic['META-SSA'][1]) + ' ' + str(dic['META-SSA'][2]) + ' ' + str(dic['META-SSA'][3]) + '\n')
-		file_obj.write('DATA' + ' ' + str(dic['DATA'][0]) + ' ' + str(dic['DATA'][1]) + ' ' + str(dic['DATA'][2]) + ' ' + str(dic['DATA'][3]) + '\n')
-		file_obj.write('NODE' + ' ' + str(dic['NODE'][0]) + ' ' + str(dic['NODE'][1]) + ' ' + str(dic['NODE'][2]) + ' ' + str(dic['NODE'][3]) + '\n')
-		file_obj.write('META-FLUSH' + ' ' + str(dic['META-FLUSH'][0]) + ' ' + str(dic['META-FLUSH'][1]) + ' ' + str(dic['META-FLUSH'][2]) + ' ' + str(dic['META-FLUSH'][3]) + '\n')
-		file_obj.write('OTHER' + ' ' + str(dic['OTHER'][0]) + ' ' + str(dic['OTHER'][1]) + ' ' + str(dic['OTHER'][2]) + ' ' + str(dic['OTHER'][3]) + '\n')
+		file_obj.write('\nMETA-CP' + ' ' + str(dic['META-CP'][0]) + ' ' \
+						+ str(dic['META-CP'][1]) + ' ' + str(dic['META-CP'][2]) \
+						+ ' ' + str(dic['META-CP'][3]) + '\n')
+		file_obj.write('META-SIT' + ' ' + str(dic['META-SIT'][0]) + ' ' \
+						+ str(dic['META-SIT'][1]) + ' ' + str(dic['META-SIT'][2]) \
+						+ ' ' + str(dic['META-SIT'][3]) + '\n')
+		file_obj.write('META-NAT' + ' ' + str(dic['META-NAT'][0]) + ' ' \
+						+ str(dic['META-NAT'][1]) + ' ' + str(dic['META-NAT'][2]) \
+						+ ' ' + str(dic['META-NAT'][3]) + '\n')
+		file_obj.write('META-SSA' + ' ' + str(dic['META-SSA'][0]) + ' ' \
+						+ str(dic['META-SSA'][1]) + ' ' + str(dic['META-SSA'][2]) \
+						+ ' ' + str(dic['META-SSA'][3]) + '\n')
+		file_obj.write('DATA' + ' ' + str(dic['DATA'][0]) + ' ' + str(dic['DATA'][1]) \
+						+ ' ' + str(dic['DATA'][2]) + ' ' + str(dic['DATA'][3]) + '\n')
+		file_obj.write('NODE' + ' ' + str(dic['NODE'][0]) + ' ' + str(dic['NODE'][1]) \
+						+ ' ' + str(dic['NODE'][2]) + ' ' + str(dic['NODE'][3]) + '\n')
+		file_obj.write('META-FLUSH' + ' ' + str(dic['META-FLUSH'][0]) + ' ' \
+						+ str(dic['META-FLUSH'][1]) + ' ' + str(dic['META-FLUSH'][2]) \
+						+ ' ' + str(dic['META-FLUSH'][3]) + '\n')
+		file_obj.write('OTHER' + ' ' + str(dic['OTHER'][0]) + ' ' + str(dic['OTHER'][1]) \
+						+ ' ' + str(dic['OTHER'][2]) + ' ' + str(dic['OTHER'][3]) + '\n')
 		file_obj.write('total size : ' + ' ' + str(count) + '\n')
 
 # 这个是用来统计F2FS下发的io分布情况
 def syslogrw2count(filename, outfilename):
-	dic = {'[0-4k)':0, '[4k-8k)':0, '[8k-16k)':0, '[16k-32k)':0, '[32k-128k)':0, '[128k-1m)':0, '[1m-2m)':0}
+	dic = {'[0-4k)':0, '[4k-8k)':0, '[8k-16k)':0, '[16k-32k)':0, \
+			'[32k-128k)':0, '[128k-1m)':0, '[1m-2m)':0}
 	count = 0
 
 	with open(filename) as file_obj:
@@ -214,12 +233,19 @@ def syslogrw2count(filename, outfilename):
 
 # 这里主要是要统计的文件result-xxxxx和syslog-xxxx
 # 统计结果写入的文件count-xxxxx，注意是追加写入的
-blkresult2count('/root/yh/20180508/result-nilfs2-fileserver.out', '/root/yh/20180508/count-nilfs2-fileserver.out')
-#syslog2count('/root/yh/20180507/syslog-fio-1.out', '/root/yh/20180507/count-fio-1.out')
-#syslogrw2count('/root/yh/20180507/syslog-fio-1.out', '/root/yh/20180507/count-fio-1.out')
+blkresult2count('/root/yh/20180508/result-nilfs2-fileserver.out', \
+				'/root/yh/20180508/count-nilfs2-fileserver.out')
+syslog2count('/root/yh/20180507/syslog-fio-1.out', \
+			'/root/yh/20180507/count-fio-1.out')
+syslogrw2count('/root/yh/20180507/syslog-fio-1.out', \
+			'/root/yh/20180507/count-fio-1.out')
 
-blkresult2count('/root/yh/20180508/result-nilfs2-mongo.out', '/root/yh/20180508/count-nilfs2-mongo.out')
-#syslog2count('/root/yh/20180507/syslog-fio-2.out', '/root/yh/20180507/count-fio-2.out')
-#syslogrw2count('/root/yh/20180507/syslog-fio-2.out', '/root/yh/20180507/count-fio-2.out')
+blkresult2count('/root/yh/20180508/result-nilfs2-mongo.out', \
+				'/root/yh/20180508/count-nilfs2-mongo.out')
+syslog2count('/root/yh/20180507/syslog-fio-2.out', \
+			'/root/yh/20180507/count-fio-2.out')
+syslogrw2count('/root/yh/20180507/syslog-fio-2.out', \
+			'/root/yh/20180507/count-fio-2.out')
 
-#blkresult2count('/root/yh/20180508/result-nilfs2-varmail.out', '/root/yh/20180508/count-nilfs2-varmail.out')
+blkresult2count('/root/yh/20180508/result-nilfs2-varmail.out', \
+				'/root/yh/20180508/count-nilfs2-varmail.out')
