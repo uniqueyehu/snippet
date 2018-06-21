@@ -13,4 +13,5 @@ HEADERS += \
     test_virtual.h \
     snippet.h \
     q25.h \
-    q26.h
+    q26.h \
+    q40.h
