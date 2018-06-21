@@ -5,3 +5,9 @@
 *.Debug
 *.Release
 *.stash
+
+# folders
+Debug
+
+# mac
+.DS_Store
